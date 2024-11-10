@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#007bff;
+            padding: 20px;
+           
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+
+        /* Form Styling */
+        .resume-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .resume-form h2 {
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+          
+        }
+
+        .resume-form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .resume-form input,
+        .resume-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition-duration: 1s;
+            
+        }
+        .resume-form input:hover{
+            background-color: #a99393;
+            color: white;  
+        }
+        
+        .resume-form textarea:hover{
+            background-color:#a99393 ;
+            color: white;
+        }
+        
+
+        .resume-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        /* Resume Preview Styling */
+        .resume-preview {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+       
+      
+
+        .resume-preview h2 {
+            color: #333;
+        }
+
+        .resume-preview h3 {
+            color: #666;
+        }
+
+        .resume-section {
+            margin-top: 15px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .resume-section h4 {
+            color: #333;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        .resume-section p,
+        .resume-section ul {
+            color: #555;
+        }
+
+        .resume-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    
+
+
+   

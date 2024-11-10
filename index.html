@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Form for input -->
+        <div class="resume-form">
+            <h2>Resume Builder</h2>
+            <form id="resumeForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" placeholder="Phone number or email">
+
+                <label for="summary">Summary:</label>
+                <textarea id="summary" rows="4" placeholder="Write a brief summary about yourself"></textarea>
+
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" placeholder="List your skills, separated by commas">
+
+                <label for="experience">Work Experience:</label>
+                <textarea id="experience" rows="4" placeholder="Describe your work experience"></textarea>
+
+                <label for="profileImage">Upload Profile Image:</label>
+                <input type="file" id="profileImage" accept="image/*">
+
+                <button type="button" onclick="generateResume()">Generate Resume</button>
+            </form>
+        </div>
+
+        <!-- Resume preview -->
+        <div class="resume-preview" id="resumePreview">
+            <img src="" alt="Profile Image" id="displayImage">
+            <h2 id="displayName">Your Name</h2>
+            <h3 id="displayContact">Contact Info</h3>
+
+            <div class="resume-section">
+                <h4>Summary</h4>
+                <p id="displaySummary">Brief summary about yourself</p>
+            </div>
+
+            <div class="resume-section">
+                <h4>Skills</h4>
+                <ul id="displaySkills"></ul>
+            </div>
+
+            <div class="resume-section">
+                <h4>Work Experience</h4>
+                <p id="displayExperience">Your work experience</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateResume() {
+            // Getting the input values
+            const name = document.getElementById("name").value;
+            const contact = document.getElementById("contact").value;
+            const summary = document.getElementById("summary").value;
+            const skills = document.getElementById("skills").value.split(",");
+            const experience = document.getElementById("experience").value;
+
+            // Displaying the values in the preview section
+            document.getElementById("displayName").innerText = name || "Your Name";
+            document.getElementById("displayContact").innerText = contact || "Contact Info";
+            document.getElementById("displaySummary").innerText = summary || "Brief summary about yourself";
+
+            // Clearing and adding skills
+            const displaySkills = document.getElementById("displaySkills");
+            displaySkills.innerHTML = "";
+            skills.forEach(skill => {
+                const li = document.createElement("li");
+                li.innerText = skill.trim();
+                displaySkills.appendChild(li);
+            });
+
+            document.getElementById("displayExperience").innerText = experience || "Your work experience";
+
+            // Handling the image upload
+            const profileImage = document.getElementById("profileImage").files[0];
+            const displayImage = document.getElementById("displayImage");
+            if (profileImage) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    displayImage.src = e.target.result;
+                };
+                reader.readAsDataURL(profileImage);
+            } else {
+                displayImage.src = "";
+            }
+        }
+    </script>
+
+    
+    
+</body>
+</html>
